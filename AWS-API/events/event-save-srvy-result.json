@@ -1,0 +1,12 @@
+
+{ 
+    "CareOrgId": "11111111",
+    "OrgCustId":" 99998",
+    "CustName": "안은솔",
+    "CustPhone": "01088881111",
+    "SrvyTitle": "테스트 Dr.H-정신이미지테스트",
+    "SrvyNo": "46",
+    "SrvyUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc7U3DYd-AnNnRRBHRK5uGXC2bHmjwcmmsl9OA3MVQSfnDXXw/viewform?edit2=2_ABaOnuevVLhwXS9ZVW0XDjt9az2zS1XSuR7u_4pYtD9WNizZTHAXEI2cRDBWJep4AFbjBUM",
+    "SrvyDate": "2021-08-23",
+    "SrvyRslt": {"1":"1","3":"45646","4":"사랑.png"}
+}

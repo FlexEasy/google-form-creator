@@ -1,0 +1,54 @@
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  Website & Mobile starter project
+
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    # The PermissionsBoundary allows users to safely develop with their function's permissions constrained
+    # to their current application. All the functions and roles in this application have to include it and
+    # it has to be manually updated when you add resources to your application.
+    # More information in https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html
+    PermissionsBoundary: arn:aws:iam::835532137853:role/smartdoctor-api-getHospitalIpRole-1LAEVMDFYZ6H2
+
+Parameters:
+  AppId:
+    Type: String
+
+
+
+Resources:
+  saveSrvyRslt:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/smartdoctorsrvy/save-srvy-result.saveSrvyRslt
+      Runtime: nodejs14.x
+      MemorySize : 128
+      Timeout: 60
+      Description: Function gets Google Forms survey result, and store them in target DB
+      Role : arn:aws:iam::835532137853:role/smartdoctor-api-getHospitalIpRole-1LAEVMDFYZ6H2
+
+  saveSrvyInfo:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/smartdoctorsrvy/save-srvy-info.saveSrvyInfo
+      Runtime: nodejs14.x
+      MemorySize : 128
+      Timeout: 60
+      Description: Function gets Google Forms survey result, and store them in target DB
+      Role : arn:aws:iam::835532137853:role/smartdoctor-api-getHospitalIpRole-1LAEVMDFYZ6H2
+
+  getSrvyId:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/smartdoctorsrvy/get-srvy-id.getSrvyId
+      Runtime: nodejs14.x
+      MemorySize : 128
+      Timeout: 60
+      Description: Function gets corresponding survey id from db using survey name and careOrgId
+      Role : arn:aws:iam::835532137853:role/smartdoctor-api-getHospitalIpRole-1LAEVMDFYZ6H2
